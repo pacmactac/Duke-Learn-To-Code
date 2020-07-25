@@ -1,0 +1,15 @@
+var img = new SimpleImage(200,200);
+for (var px of img.values()){
+  var x = px.getX();
+  var y = px.getY();
+  if (x < img.getWidth()/2){ //if x is less than 100
+    px.setRed(255); //set to red (makes the half left side of image red)
+  }
+  if (y>img.getHeight()/2){ //if y is greater than 100 
+    px.setBlue(255); // makes the bottom of the half of the image blue - lower left corner overlaps red and blue making magenta 
+  }
+  if (x>=img.getWidth()/2 && y<=img.getHeight()/2){
+      px.setGreen(255);
+  }
+}
+print (img);
